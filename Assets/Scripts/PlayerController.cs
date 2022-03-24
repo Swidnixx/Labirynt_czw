@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Sterowanie
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * Time.deltaTime * speed);
 
+        // Opadanie
         if(GroundCheck())
         {
             //"Stojê na ziemi"
@@ -45,6 +47,15 @@ public class PlayerController : MonoBehaviour
         controller.Move(Vector3.up * velocityY * Time.deltaTime);
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        print("test");
+        if(hit.gameObject.CompareTag("Pickup"))
+        {
+            hit.gameObject.GetComponent<Pickup>().Pick();
+        }
+    }
+
     private bool GroundCheck()
     {
         Debug.DrawLine(transform.position, transform.position - transform.up, Color.red);
@@ -54,10 +65,27 @@ public class PlayerController : MonoBehaviour
             transform.position,
             Vector3.down, 
             out hit,
-            1.1f,
+            1.02f,
             LayerMask.GetMask("Ground")
             ))
         {
+            //Debug.Log(hit.collider.tag);
+
+            switch(hit.collider.tag)
+            {
+                case "GroundFast":
+                    speed = 25;
+                    break;
+
+                case "GroundSlow":
+                    speed = 5;
+                    break;
+
+                default:
+                    speed = 12;
+                    break;
+            }
+
             return true;
         }
 
