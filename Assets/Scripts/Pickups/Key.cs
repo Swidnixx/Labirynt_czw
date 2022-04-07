@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeFreeze : Pickup
+public enum KeyColor
 {
-    public int freezeTime = 10;
+    Red,
+    Green,
+    Gold
+}
+public class Key : Pickup
+{
+    public KeyColor color;
 
     public override void Pick()
     {
-        GameManager.instance.FreezeTime(freezeTime);
+        GameManager.instance.AddKey(color);
         Destroy(this.gameObject);
     }
 }

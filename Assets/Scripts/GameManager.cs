@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int timeLeft = 100;
     private bool gamePaused;
     private int diamonds;
+    public int redKeys = 0;
+    public int greenKeys = 0;
+    public int goldKeys = 0;
 
     #region Unity Callbacks
     private void Start()
@@ -80,6 +83,24 @@ public class GameManager : MonoBehaviour
     {
         CancelInvoke(nameof(StopperTick));
         InvokeRepeating(nameof(StopperTick), time, 1);
+    }
+
+    public void AddKey(KeyColor color)
+    {
+        switch(color)
+        {
+            case KeyColor.Gold:
+                goldKeys++;
+                break;
+
+            case KeyColor.Green:
+                greenKeys++;
+                break;
+
+            case KeyColor.Red:
+                redKeys++;
+                break;
+        }
     }
     #endregion
 }
