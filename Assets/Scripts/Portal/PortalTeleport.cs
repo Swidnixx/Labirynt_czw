@@ -24,7 +24,10 @@ public class PortalTeleport : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        playerIsOverlapping = false;
+        if (other.CompareTag("Player"))
+        {
+            playerIsOverlapping = false; 
+        }
     }
 
     private void FixedUpdate()
