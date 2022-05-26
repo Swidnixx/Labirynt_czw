@@ -24,7 +24,7 @@ public class LockMechanim : MonoBehaviour
             {
                 alreadyUnlocked = true;
                 animator.SetTrigger("open");
-                Unlock(); 
+                //Unlock(); 
             }
         }
     }
