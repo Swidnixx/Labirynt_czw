@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 3706425598223669762}
   m_Layer: 6
   m_Name: Plane
-  m_TagString: GroundFast
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7878098194240626823
 Transform:
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d690e6f1a07f424cb193d5de776e146, type: 2}
+  - {fileID: 2100000, guid: b6c0fd7686783284496df40497aedc8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,10 +107,10 @@ GameObject:
   - component: {fileID: 6917686200130427478}
   m_Layer: 0
   m_Name: FloorFast
-  m_TagString: GroundSlow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6917686200130427478
 Transform:

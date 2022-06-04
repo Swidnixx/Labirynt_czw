@@ -16,5 +16,10 @@ public class GeneratorEditor : Editor
         {
             generator.Generate();
         }
+
+        if(GUILayout.Button("Clear"))
+        {
+            generator.Clear();
+        }
     }
 }
