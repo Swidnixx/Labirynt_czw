@@ -49,7 +49,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        print("test");
+        if(hit.gameObject.CompareTag("Win"))
+        {
+            GameManager.instance.GameWin();
+        }
         if(hit.gameObject.CompareTag("Pickup"))
         {
             hit.gameObject.GetComponent<Pickup>().Pick();
